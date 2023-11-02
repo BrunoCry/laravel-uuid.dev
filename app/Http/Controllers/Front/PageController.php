@@ -12,7 +12,7 @@ class PageController extends Controller
      * 
      * @return [type]
      */
-    public function list()
+    public function index()
     {
         return view('layouts.app');
     }
