@@ -11,9 +11,6 @@
     </head>
     <body>
         <div id="app">
-            @include('components.navbar')
-
-            @yield('page')
         </div>
     </body>
 </html>
