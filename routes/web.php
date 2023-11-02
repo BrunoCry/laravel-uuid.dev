@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Front\PageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [PageController::class, 'list'])->name('page.index');
+Route::get('/generate', [PageController::class, 'generate'])->name('page.generate');
+Route::get('/retrieve', [PageController::class, 'retrieve'])->name('page.retrieve');
