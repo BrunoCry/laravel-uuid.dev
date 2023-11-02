@@ -14,4 +14,4 @@ use App\Http\Controllers\Front\PageController;
 |
 */
 
-Route::get('/', [PageController::class, 'list'])->name('page.index');
+Route::get('{path}', [PageController::class, 'index'])->where('path', '(.*)');
