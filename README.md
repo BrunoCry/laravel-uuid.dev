@@ -19,7 +19,7 @@
 - `npm install`
 
 ## Usage
-# Development
+### Development
 ```bash
 # Start Laravel locally
 php artisan serve
