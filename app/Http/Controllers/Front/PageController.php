@@ -14,26 +14,6 @@ class PageController extends Controller
      */
     public function list()
     {
-        return view('pages.index');
-    }
-
-    /**
-     * Generation page
-     * 
-     * @return [type]
-     */
-    public function generate()
-    {
-        return view('pages.generate');
-    }
-
-    /**
-     * Retrieve page
-     * 
-     * @return [type]
-     */
-    public function retrieve()
-    {
-        return view('pages.retrieve');
+        return view('layouts.app');
     }
 }
