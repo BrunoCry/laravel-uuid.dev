@@ -4,7 +4,6 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
 use Illuminate\Support\Str;
 use App\Models\UUID;
 
@@ -15,11 +14,11 @@ class UUIDController extends Controller
      * 
      * @return Response $response
      */
-    public function list(): Response
+    public function list()
     {
         $models = UUID::orderByDesc('created_at')->get();
 
-        return Response::json([
+        return response()->json([
             'models' => $models
         ], 200);
     }
@@ -31,13 +30,13 @@ class UUIDController extends Controller
      * 
      * @return Response $response
      */
-    public function generate(Request $request): Response
+    public function generate(Request $request)
     {
         $model = new UUID();
         $model->uuid = Str::uuid();
         $model->save();
 
-        return Response::json([
+        return response()->json([
             'id' => $model->id,
             'uuid' => $model->uuid
         ], 201);
@@ -50,11 +49,11 @@ class UUIDController extends Controller
      * 
      * @return Response
      */
-    public function retrieve($id): Response
+    public function retrieve($id)
     {
-        $model = UUID::findOrFail($request->id);
+        $model = UUID::findOrFail($id);
 
-        return Response::json([
+        return response()->json([
             'id' => $model->id,
             'uuid' => $model->uuid
         ], 200);
